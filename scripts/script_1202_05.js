@@ -1,7 +1,7 @@
 /* 00. 可改動區域 ------------------------------ */
 /* 00-01. 商業邏輯  */
 const cardCount = 78;
-const targetCardCount = 3;
+const targetCardCount = 4;
 
 const noReverse = -1;
 const readCard = -1;
@@ -335,9 +335,15 @@ function finalShow() {
     if (i == Math.floor(targetCardCount / 2)) {
       btnTopStr = finalTextTop + 20 + finalTextHeight + "px;";
 
-      if (windowWidth < 900 || windowHeight < 600)
-        btnLeftStr = finalTextLeft - 20 + "px;";
-      else btnLeftStr = finalTextLeft - 50 + "px;";
+      if (targetCardCount == 3) {
+        if (windowWidth < 900 || windowHeight < 600)
+          btnLeftStr = finalTextLeft - 20 + "px;";
+        else btnLeftStr = finalTextLeft - 50 + "px;";
+      } else {
+        if (windowWidth < 900 || windowHeight < 600)
+          btnLeftStr = finalTextLeft - 20 - finalCardWidth + "px;";
+        else btnLeftStr = finalTextLeft - 50 - finalCardWidth + "px;";
+      }
     }
   }
   // 3.把所有選牌隱藏
@@ -429,9 +435,15 @@ function sendMail(event) {
   let templateParams = {
     name: $("#name").val(),
     email: $("#email").val(),
-    question: $("#question").val(),
     pick_card_result: $("#pick_card_result").val(),
   };
+
+  // let templateParams = {
+  //   name: $("#name").val(),
+  //   email: $("#email").val(),
+  //   // question: $("#question").val(),
+  //   pick_card_result: $("#pick_card_result").val(),
+  // };
 
   if ($("#name").val().length === 0) {
     alert("未填您的稱呼");
