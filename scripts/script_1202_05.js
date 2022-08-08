@@ -443,7 +443,7 @@ function sendMail(event) {
     return;
   }
   console.log("email send");
-  emailjs.send("service_h6qkwrl", "template_qvkthmf", templateParams).then(
+  emailjs.send("service_8zxsun7", "template_g0kdmol", templateParams).then(
     function () {
       console.log("SUCCESS!");
       alert("已成功送出");
