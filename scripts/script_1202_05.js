@@ -249,6 +249,8 @@ $(document).on("click", ".center_card", function () {
       $(clickID).css("opacity", 1);
       $(clickID).css("visibility", "hidden");
       $(targetCardID).css("background-image", cardImage);
+      $(targetCardID).css("background-size", "100% 100%"); //add_20220808
+      $(targetCardID).css("background-repeat", "no-repeat"); //add_20220808
 
       console.log("cardNo:" + cardNo);
       let cardResult = cardName[cardNo];
