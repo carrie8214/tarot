@@ -31,7 +31,6 @@ var target_card_no = [];
 /* 01. 先算好的數字 ----------------------------- */
 const windowHeight = $(window).height();
 const windowWidth = $(window).width();
-alert(windowWidth);
 
 let cardWidth = Number(
   getComputedStyle(document.documentElement).getPropertyValue("--card-width")
