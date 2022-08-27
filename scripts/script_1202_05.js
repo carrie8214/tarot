@@ -31,6 +31,7 @@ var target_card_no = [];
 /* 01. 先算好的數字 ----------------------------- */
 const windowHeight = $(window).height();
 const windowWidth = $(window).width();
+alert(windowWidth);
 
 let cardWidth = Number(
   getComputedStyle(document.documentElement).getPropertyValue("--card-width")
@@ -462,9 +463,9 @@ function sendMail(event) {
       console.log("SUCCESS!");
       alert("已成功送出");
     },
-    function (error) {
+    function (error, message) {
       console.log("FAILED...", error);
-      alert("傳送失敗:" + error);
+      alert("傳送失敗:" + error + " - message" + message);
     }
   );
   window.scrollTo(0, 0);
